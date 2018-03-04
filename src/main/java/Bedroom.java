@@ -21,6 +21,10 @@ public class Bedroom extends Room {
         return cost;
     }
 
+    public boolean isAvailable() {
+        return available;
+    }
+
     public void changeStatus(){
         available = !available;
     }

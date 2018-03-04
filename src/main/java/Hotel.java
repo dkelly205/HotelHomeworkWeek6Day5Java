@@ -1,28 +1,36 @@
 import java.util.ArrayList;
 
 public class Hotel {
-
+    
+    private String name;
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<DiningRoom> diningRooms;
     private ArrayList<ConferenceRoom> conferenceRooms;
 
-    public Hotel() {
+    public Hotel(String name) {
+        this.name = name;
         bedrooms = new ArrayList<>();
         diningRooms = new ArrayList<>();
         conferenceRooms = new ArrayList<>();
     }
 
-    public int getNumberOfBedrooms(){
-        return bedrooms.size();
+    public String getName() {
+        return name;
     }
 
-    public int getNumberOfDiningRooms(){
-        return diningRooms.size();
+    public void checkIn(Guest guest, Bedroom bedroom){
+        bedroom.addGuest(guest);
+        bedroom.changeStatus();
     }
 
-    public int getNumberOfConferenceRooms(){
-        return conferenceRooms.size();
+    public void checkOut(Guest guest, Bedroom bedroom){
+        bedroom.removeGuest(guest);
+        bedroom.isAvailable();
     }
+
+//    public ArrayList getAvailableRooms(){
+//
+//    }
 
 
 }
