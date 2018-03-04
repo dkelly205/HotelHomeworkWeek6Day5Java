@@ -28,9 +28,14 @@ public class Hotel {
         bedroom.isAvailable();
     }
 
-//    public ArrayList getAvailableRooms(){
+//    public String checkGuest(Guest guest){
+//        for(Room bedroom : bedrooms){
+//            bedroom.getGuests();
+//        }
 //
 //    }
+
+
 
 
 }
