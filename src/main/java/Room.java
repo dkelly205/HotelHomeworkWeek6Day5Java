@@ -12,15 +12,25 @@ public abstract class Room {
         guests = new ArrayList<>();
     }
 
-    public void addGuest(Guest guest){
-        this.guests.add(guest);
-    }
-
     public int getRoomNumber() {
         return roomNumber;
     }
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public int getNumberOfGuests() {
+        return guests.size();
+    }
+
+    public void addGuest(Guest guest){
+        if(getNumberOfGuests() < capacity){
+            this.guests.add(guest);
+        }
+    }
+
+    public void removeGuest(Guest guest){
+        this.guests.remove(guest);
     }
 }
